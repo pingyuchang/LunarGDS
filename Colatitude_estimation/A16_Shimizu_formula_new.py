@@ -60,7 +60,7 @@ def process_apollo_data(file_path, station_lat, station_lon, title, offset):
     tt = np.arange(0, endtime, dt)
 
     bx = sp.signal.medfilt(data['BX'] + offset[0], 1)
-    by = sp.signal.medfilt(data['BY'] + offset[1], 1)
+    by = sp.signal.medfilt(data['BY'] + offset[1], 1) *-1 #BY was found that should be flipped
     bz = sp.signal.medfilt(data['BZ'] + offset[2], 1)
 
     p = -bx
