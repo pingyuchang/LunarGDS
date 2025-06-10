@@ -275,7 +275,7 @@ filtered_coherence = coherence_filtered[valid_Coh]
 filtered_TFR_err = TFR_errors_filtered[valid_Coh]
 filtered_TFI_err = TFI_errors_filtered[valid_Coh]
 
-# Compute phase and its error
+# Compute phase and its error (C_response phase if Z impedance:+90 degrees)
 filtered_phase = np.angle(filtered_Cr12, deg=True)  # Phase in degrees
 filtered_phase_err =filtered_phase * (np.abs(filtered_Cr12_err)/np.abs(filtered_Cr12))
 
